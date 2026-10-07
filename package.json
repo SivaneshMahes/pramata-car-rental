@@ -1,0 +1,37 @@
+{
+  "name": "wheels-2-go",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "dev:api": "node --watch --env-file-if-exists=.env server/index.js",
+    "dev:web": "vite --host localhost",
+    "build": "vite build",
+    "start": "node --env-file-if-exists=.env server/index.js --serve",
+    "test": "node --test tests/*.test.js",
+    "seed": "node --env-file-if-exists=.env server/seed.js",
+    "check": "npm test && npm run build",
+    "format": "prettier --write src server tests scripts vite.config.js",
+    "format:check": "prettier --check src server tests scripts vite.config.js"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "2.1.10",
+    "express": "5.2.1",
+    "express-rate-limit": "^8.7.1",
+    "google-auth-library": "^10.0.0",
+    "helmet": "8.3.0",
+    "multer": "2.4.0",
+    "pdfkit": "0.20.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "prettier": "3.9.9",
+    "vite": "8.3.3"
+  }
+}
